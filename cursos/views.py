@@ -3,8 +3,8 @@ from .models import Curso
 from datetime import datetime
 
 def listar_cursos(request):
+    nome_filtrar = request.Get.get('nome_filtrar')
     cursos = Curso.objects.all()
-    print(cursos)
     return render(request, 'listar_cursos.html', {'cursos':cursos})
 
 def criar_curso(request):
